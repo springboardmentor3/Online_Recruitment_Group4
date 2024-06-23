@@ -1,0 +1,50 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav class="sidenav" fixedInViewport="true" [mode]="'side'" [opened]="true">
+    <mat-nav-list>
+      <mat-list-item [routerLink]="['/admin/emp-dashboard']">Employer</mat-list-item>
+      <mat-list-item [routerLink]="['/admin/jobseeker-dashboard']">Job Seekers</mat-list-item>
+      <mat-list-item [routerLink]="['/admin/job-list/:userId']">Jobs</mat-list-item>
+    
+    </mat-nav-list>
+
+    <!-- <div class="container mt-4">
+      <h3>Notifications</h3>
+      <ul class="list-group">
+        <li *ngFor="let notification of notifications" class="list-group-item" (click)="selectNotification(notification)">
+          {{ notification.message }}
+        </li>
+      </ul>
+    </div> -->
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Dashboard</span>
+      <span class="spacer"></span>
+      <button mat-button (click)="logout()">Logout</button>
+    </mat-toolbar>
+
+    <!-- <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-4">
+          <h3>Notifications</h3>
+          <ul class="list-group">
+            <li *ngFor="let notification of notifications" class="list-group-item" (click)="selectNotification(notification)">
+              {{ notification.message }}
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8" *ngIf="selectedNotification">
+          <h3>Reply to {{ selectedNotification.name }}</h3>
+          <textarea [(ngModel)]="reply" class="form-control" rows="5" placeholder="Enter your reply"></textarea>
+          <button class="btn btn-primary mt-3" (click)="sendReply()">Send Reply</button>
+        </div>
+      </div>
+    </div> -->
+
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

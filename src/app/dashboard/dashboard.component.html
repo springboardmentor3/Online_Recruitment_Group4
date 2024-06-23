@@ -1,0 +1,15 @@
+<nav>
+    <ul>
+      <li><a routerLink="/student/:userId">Create Profile</a></li>
+      <li><a routerLink="notifications">Notifications</a></li>
+      <li><a routerLink="/login" (click)="logout()" >LogOut</a></li>
+    </ul>
+  </nav>
+  
+  <img src="assets/j2.png" alt="Job Seeker" class="jobseeker-image">
+  <div class="dashboard-content">
+    <router-outlet></router-outlet>
+  </div>
+  
+
+  <!-- a routerLink="/login" -->
